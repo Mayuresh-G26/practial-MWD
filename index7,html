@@ -1,0 +1,105 @@
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interactive FAQ</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-[url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1740&auto=format&fit=crop')] bg-cover bg-center">
+
+    <div class="bg-white p-8 rounded-xl shadow-lg w-96">
+
+        <h2 class="text-2xl font-bold text-center text-emerald-600 mb-6">
+            Student Help Portal
+        </h2>
+
+        <p class="text-center mb-5 text-gray-600">
+            Frequently Asked Questions
+        </p>
+
+        <!-- FAQ 1 -->
+        <div class="mb-3">
+            <button class="question w-full text-left p-3 rounded-xl bg-gradient-to-r from-green-500 to-teal-500 text-white rounded">
+                What are the college timings?
+            </button>
+
+            <p class="answer hidden p-3 bg-purple-50">
+                College timings are from 9:00 AM to 5:00 PM.
+            </p>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="mb-3">
+            <button class="question w-full text-left p-3 rounded-xl bg-gradient-to-r from-green-500 to-teal-500 text-white rounded">
+                How can I apply for leave?
+            </button>
+
+            <p class="answer hidden p-3 bg-purple-50">
+                You can apply for leave through the college portal.
+            </p>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="mb-3">
+            <button class="question w-full text-left p-3 rounded-xl bg-gradient-to-r from-green-500 to-teal-500 text-white rounded">
+                Where can I check my timetable?
+            </button>
+
+            <p class="answer hidden p-3 bg-purple-50">
+                You can check your timetable on the student portal.
+            </p>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="mb-3">
+            <button class="question w-full text-left p-3 rounded-xl bg-gradient-to-r from-green-500 to-teal-500 text-white rounded">
+                How do I find an internship or a part-time job on campus ?
+            </button>
+
+            <p class="answer hidden p-3 bg-purple-50">
+                Register on your college’s official career portal (like Handshake or the campus placement cell). You can also directly visit campus departments (like the library or cafeteria) to ask about student worker openings.
+            </p>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="mb-3">
+            <button class="question w-full text-left p-3 rounded-xl bg-gradient-to-r from-green-500 to-teal-500 text-white rounded">
+                What services does the Career Counseling Cell offer?
+            </button>
+
+            <p class="answer hidden p-3 bg-purple-50">
+                The career center provides free resume writing workshops, mock interview preparation, career counseling, and hosts annual campus placement drives where companies come to recruit students
+            </p>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // Get all questions
+        let questions = document.querySelectorAll(".question");
+
+        // Add click event to each question
+        questions.forEach(function(question) {
+
+            question.addEventListener("mouseenter", function() {
+
+                // Get the answer
+                let answer = question.nextElementSibling;
+
+                // Show / Hide answer
+                answer.classList.toggle("hidden");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>
+```
