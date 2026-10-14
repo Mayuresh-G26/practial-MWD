@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Hub | Learn • Grow • Succeed</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  body { font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+  .glass { background: rgba(255,255,255,.88); border: 1px solid rgba(219,234,254,.9); box-shadow: 0 8px 24px rgba(30,64,175,.06); }
+  .nav-link { transition: .2s ease; }
+  .nav-link:hover, .nav-link.active { background: #344a9b; color: white; transform: translateX(2px); }
+  .service-card { transition: transform .2s ease, box-shadow .2s ease; }
+  .service-card:hover { transform: translateY(-4px); box-shadow: 0 14px 28px rgba(79,70,229,.12); }
+</style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+<div class="min-h-screen lg:flex">
+  <aside class="bg-gradient-to-b from-slate-950 to-indigo-950 text-white lg:w-60 lg:min-h-screen p-5 flex flex-col">
+    <a href="#home" class="flex items-center gap-3 mb-8">
+      <span class="text-4xl">🎓</span>
+      <span><span class="block text-xl font-extrabold">Student Hub</span><span class="text-xs text-indigo-200">Learn • Grow • Succeed</span></span>
+    </a>
+    <nav class="space-y-2" aria-label="Main navigation">
+      <a href="#home" class="nav-link active flex items-center gap-3 rounded-xl px-4 py-3">⌂ <span>Home</span></a>
+      <a href="#resources" class="nav-link flex items-center gap-3 rounded-xl px-4 py-3">▤ <span>Study Resources</span></a>
+      <a href="#calculator" class="nav-link flex items-center gap-3 rounded-xl px-4 py-3">▦ <span>CGPA Calculator</span></a>
+      <a href="#resources" class="nav-link flex items-center gap-3 rounded-xl px-4 py-3">▧ <span>Notes</span></a>
+      <a href="#motivation" class="nav-link flex items-center gap-3 rounded-xl px-4 py-3">♧ <span>Motivation</span></a>
+      <a href="#links" class="nav-link flex items-center gap-3 rounded-xl px-4 py-3">↗ <span>Quick Links</span></a>
+    </nav>
+    <div class="mt-auto pt-12 hidden lg:block">
+      <div class="rounded-2xl bg-white/5 p-4 text-indigo-200">
+        <div class="text-3xl mb-2">💻 ☕</div>
+        <p class="font-semibold italic text-lg">Better Students<br>Build a Brighter Future</p>
+      </div>
+    </div>
+  </aside>
+
+  <main class="flex-1 min-w-0">
+    <header class="sticky top-0 z-10 bg-white/90 backdrop-blur border-b border-slate-200 px-5 md:px-8 py-4 flex items-center justify-between gap-4">
+      <div class="relative w-full max-w-sm">
+        <span class="absolute left-3 top-2.5 text-slate-400">⌕</span>
+        <input id="globalSearch" class="w-full rounded-xl border border-slate-200 bg-slate-50 py-2 pl-9 pr-3 outline-none focus:border-indigo-400" placeholder="Search resources..." aria-label="Search resources">
+      </div>
+      <div class="flex items-center gap-3 shrink-0">
+        <span class="text-xl" title="Notifications">♧</span>
+        <div class="w-9 h-9 rounded-full bg-indigo-100 flex items-center justify-center">👨🏻‍🎓</div>
+        <span class="font-semibold text-sm hidden sm:block">Student</span>
+      </div>
+    </header>
+
+    <div class="max-w-[1500px] mx-auto p-4 md:p-7">
+      <div class="flex justify-end text-xs text-slate-500 mb-3" id="todayDate"></div>
+      <section id="home" class="rounded-3xl overflow-hidden bg-gradient-to-r from-blue-600 via-indigo-600 to-fuchsia-500 text-white p-6 md:p-8 lg:p-10 relative">
+        <div class="absolute right-8 top-3 text-7xl opacity-20 hidden sm:block">🎓</div>
+        <div class="max-w-xl relative">
+          <p class="font-semibold text-blue-100 mb-2">Hey there, student! 👋</p>
+          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Welcome to<br>Student Hub!</h1>
+          <p class="mt-4 text-blue-50 md:text-lg">Your one-stop place for study resources, CGPA calculation and daily inspiration.</p>
+          <a href="#resources" class="inline-flex mt-6 items-center gap-2 rounded-full bg-white text-indigo-700 font-bold px-5 py-3 hover:bg-indigo-50 transition">Explore Now <span>→</span></a>
+        </div>
+      </section>
+
+      <div class="grid sm:grid-cols-2 xl:grid-cols-4 gap-4 mt-5">
+        <a href="#resources" class="service-card glass rounded-2xl p-5">
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-sky-400 to-blue-600 text-white grid place-items-center text-2xl shadow-lg">▤</div>
+          <h2 class="font-bold text-lg mt-4">Study Resources</h2>
+          <p class="text-sm text-slate-500 mt-2">Find subject notes, practice questions and learning materials.</p>
+          <span class="inline-block mt-4 rounded-full bg-blue-50 text-blue-700 px-4 py-2 text-sm font-semibold">Explore →</span>
+        </a>
+        <a href="#calculator" class="service-card glass rounded-2xl p-5">
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-violet-400 to-purple-700 text-white grid place-items-center text-2xl shadow-lg">▦</div>
+          <h2 class="font-bold text-lg mt-4">CGPA Calculator</h2>
+          <p class="text-sm text-slate-500 mt-2">Calculate the average of your semester grade points.</p>
+          <span class="inline-block mt-4 rounded-full bg-purple-50 text-purple-700 px-4 py-2 text-sm font-semibold">Calculate →</span>
+        </a>
+        <div id="motivation" class="service-card glass rounded-2xl p-5">
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-amber-300 to-orange-500 text-white grid place-items-center text-2xl shadow-lg">✦</div>
+          <h2 class="font-bold text-lg mt-4">Daily Motivation</h2>
+          <p id="quoteText" class="text-sm text-slate-500 mt-2">Small steps every day lead to big results.</p>
+          <button id="quoteBtn" class="mt-4 rounded-full bg-orange-50 text-orange-700 px-4 py-2 text-sm font-semibold hover:bg-orange-100">Get Quote ↗</button>
+        </div>
+        <div class="service-card glass rounded-2xl p-5">
+          <div class="w-14 h-14 rounded-full bg-gradient-to-br from-emerald-400 to-green-600 text-white grid place-items-center text-2xl shadow-lg">↗</div>
+          <h2 class="font-bold text-lg mt-4">Quick Links</h2>
+          <p class="text-sm text-slate-500 mt-2">Jump to useful coding and learning websites.</p>
+          <a href="#links" class="inline-block mt-4 rounded-full bg-emerald-50 text-emerald-700 px-4 py-2 text-sm font-semibold">View Links →</a>
+        </div>
+      </div>
+
+      <div class="grid xl:grid-cols-2 gap-5 mt-5">
+        <section id="resources" class="glass rounded-2xl p-5">
+          <div class="rounded-xl bg-gradient-to-r from-blue-50 to-indigo-50 p-4 mb-4">
+            <h2 class="text-xl font-extrabold text-indigo-950">📚 Study Resources</h2>
+            <p class="text-sm text-slate-500 mt-1">Useful starting points for your learning journey.</p>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-3 mb-4">
+            <input id="subjectSearch" class="flex-1 min-w-0 rounded-xl border border-slate-200 px-4 py-3 outline-none focus:border-indigo-400" placeholder="Search a subject...">
+            <select id="subjectFilter" class="rounded-xl border border-slate-200 px-4 py-3 bg-white"><option value="all">All subjects</option><option value="CSE">CSE</option><option value="Web">Web Development</option></select>
+          </div>
+          <div id="resourceList" class="space-y-3">
+            <article data-subject="CSE" class="resource-row rounded-xl bg-slate-50 p-4 flex items-center gap-3">
+              <div class="w-11 h-11 rounded-xl bg-blue-100 grid place-items-center text-xl">📘</div><div class="flex-1"><h3 class="font-semibold">Data Structures & Algorithms</h3><p class="text-xs text-slate-500 mt-1">Notes • Practice questions • Videos</p></div><a class="text-sm font-bold text-blue-600" target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/data-structures/">View ↗</a>
+            </article>
+            <article data-subject="CSE" class="resource-row rounded-xl bg-slate-50 p-4 flex items-center gap-3">
+              <div class="w-11 h-11 rounded-xl bg-violet-100 grid place-items-center text-xl">🗄️</div><div class="flex-1"><h3 class="font-semibold">Database Management Systems</h3><p class="text-xs text-slate-500 mt-1">Database concepts • SQL practice</p></div><a class="text-sm font-bold text-blue-600" target="_blank" rel="noopener" href="https://www.w3schools.com/sql/">View ↗</a>
+            </article>
+            <article data-subject="CSE" class="resource-row rounded-xl bg-slate-50 p-4 flex items-center gap-3">
+              <div class="w-11 h-11 rounded-xl bg-orange-100 grid place-items-center text-xl">🌐</div><div class="flex-1"><h3 class="font-semibold">Computer Networks</h3><p class="text-xs text-slate-500 mt-1">Networking basics • Tutorials</p></div><a class="text-sm font-bold text-blue-600" target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/computer-network-tutorials/">View ↗</a>
+            </article>
+            <article data-subject="Web" class="resource-row rounded-xl bg-slate-50 p-4 flex items-center gap-3">
+              <div class="w-11 h-11 rounded-xl bg-emerald-100 grid place-items-center text-xl">💻</div><div class="flex-1"><h3 class="font-semibold">Web Development</h3><p class="text-xs text-slate-500 mt-1">HTML • CSS • JavaScript</p></div><a class="text-sm font-bold text-blue-600" target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Learn">View ↗</a>
+            </article>
+          </div>
+          <p id="noResources" class="hidden text-center text-slate-500 py-6">No matching resources found.</p>
+        </section>
+
+        <section id="calculator" class="glass rounded-2xl p-5">
+          <div class="rounded-xl bg-gradient-to-r from-purple-50 to-fuchsia-50 p-4 mb-4">
+            <h2 class="text-xl font-extrabold text-indigo-950">🧮 CGPA Calculator</h2>
+            <p class="text-sm text-slate-500 mt-1">Enter semester grade points (0–10).</p>
+          </div>
+          <form id="cgpaForm">
+            <div class="grid grid-cols-2 gap-4" id="semesterInputs"></div>
+            <button class="w-full mt-5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-bold py-3 hover:opacity-90 transition" type="submit">▦ Calculate CGPA</button>
+          </form>
+          <div id="cgpaResult" class="hidden mt-4 rounded-xl bg-emerald-50 border border-emerald-100 p-5 flex items-center justify-between gap-3">
+            <div><p class="text-sm text-emerald-800">Your average grade point</p><p class="text-3xl font-extrabold text-emerald-950"><span id="cgpaValue">0.00</span><span class="text-lg font-medium"> / 10</span></p></div><span id="cgpaLabel" class="rounded-full bg-white text-emerald-700 px-3 py-2 text-sm font-semibold">Calculated</span>
+          </div>
+          <p class="text-xs text-slate-400 mt-3">This simple calculator uses the average of entered semester grades; use your university's official method for final results.</p>
+        </section>
+      </div>
+
+      <section id="links" class="glass rounded-2xl p-5 mt-5">
+        <h2 class="text-xl font-extrabold mb-4">🔗 Quick Links</h2>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+          <a target="_blank" rel="noopener" href="https://www.google.com/" class="rounded-xl bg-slate-50 p-4 hover:bg-blue-50 text-center"><div class="text-2xl mb-2">🔎</div><span class="text-sm font-semibold">Google</span></a>
+          <a target="_blank" rel="noopener" href="https://www.youtube.com/" class="rounded-xl bg-slate-50 p-4 hover:bg-red-50 text-center"><div class="text-2xl mb-2">▶️</div><span class="text-sm font-semibold">YouTube</span></a>
+          <a target="_blank" rel="noopener" href="https://github.com/" class="rounded-xl bg-slate-50 p-4 hover:bg-slate-200 text-center"><div class="text-2xl mb-2">🐙</div><span class="text-sm font-semibold">GitHub</span></a>
+          <a target="_blank" rel="noopener" href="https://leetcode.com/" class="rounded-xl bg-slate-50 p-4 hover:bg-orange-50 text-center"><div class="text-2xl mb-2">🧩</div><span class="text-sm font-semibold">LeetCode</span></a>
+          <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/" class="rounded-xl bg-slate-50 p-4 hover:bg-green-50 text-center"><div class="text-2xl mb-2">💚</div><span class="text-sm font-semibold">GeeksforGeeks</span></a>
+          <a target="_blank" rel="noopener" href="https://sbjit.edu.in/" class="rounded-xl bg-slate-50 p-4 hover:bg-indigo-50 text-center"><div class="text-2xl mb-2">🏛️</div><span class="text-sm font-semibold">College Website</span></a>
+        </div>
+      </section>
+      <footer class="text-center text-xs text-slate-400 py-7">© 2026 Student Hub <span class="mx-2">|</span> Made with 💜 for students</footer>
+    </div>
+  </main>
+</div>
+
+<script>
+  const dateEl = document.getElementById('todayDate');
+  dateEl.textContent = new Date().toLocaleDateString(undefined, { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric' });
+
+  const quotes = [
+    'Small steps every day lead to big results.',
+    'Consistency is the bridge between goals and achievement.',
+    'Every expert was once a beginner.',
+    'Focus on progress, not perfection.',
+    'Your future is created by what you learn today.'
+  ];
+  document.getElementById('quoteBtn').addEventListener('click', () => {
+    const quoteEl = document.getElementById('quoteText');
+    let next = quotes[Math.floor(Math.random() * quotes.length)];
+    if (quotes.length > 1 && next === quoteEl.textContent) next = quotes[(quotes.indexOf(next) + 1) % quotes.length];
+    quoteEl.textContent = next;
+  });
+
+  const searchInputs = [document.getElementById('subjectSearch'), document.getElementById('globalSearch')];
+  const filter = document.getElementById('subjectFilter');
+  function filterResources() {
+    const q = searchInputs.map(el => el.value.toLowerCase().trim()).find(Boolean) || '';
+    let shown = 0;
+    document.querySelectorAll('.resource-row').forEach(row => {
+      const matchesText = row.textContent.toLowerCase().includes(q);
+      const category = filter.value;
+      const matchesCategory = category === 'all' || row.dataset.subject === category;
+      row.classList.toggle('hidden', !(matchesText && matchesCategory));
+      if (matchesText && matchesCategory) shown++;
+    });
+    document.getElementById('noResources').classList.toggle('hidden', shown !== 0);
+  }
+  searchInputs.forEach(input => input.addEventListener('input', () => {
+    const other = searchInputs.find(el => el !== input);
+    other.value = input.value;
+    filterResources();
+  }));
+  filter.addEventListener('change', filterResources);
+
+  const semesterInputs = document.getElementById('semesterInputs');
+  for (let i = 1; i <= 6; i++) {
+    const wrap = document.createElement('label');
+    wrap.className = 'block text-sm font-semibold text-slate-700';
+    wrap.innerHTML = `Semester ${i}<input type="number" min="0" max="10" step="0.01" placeholder="e.g. 8.5" aria-label="Semester ${i} grade point" class="grade-input block mt-2 w-full rounded-xl border border-slate-200 px-3 py-2.5 font-normal outline-none focus:border-indigo-400">`;
+    semesterInputs.appendChild(wrap);
+  }
+  document.getElementById('cgpaForm').addEventListener('submit', event => {
+    event.preventDefault();
+    const fields = [...document.querySelectorAll('.grade-input')];
+    const entered = fields.filter(field => field.value.trim() !== '');
+    const invalid = entered.some(field => !Number.isFinite(Number(field.value)) || Number(field.value) < 0 || Number(field.value) > 10);
+    const result = document.getElementById('cgpaResult');
+    if (entered.length === 0 || invalid) {
+      alert('Enter at least one valid grade point between 0 and 10.');
+      return;
+    }
+    const average = entered.reduce((sum, field) => sum + Number(field.value), 0) / entered.length;
+    document.getElementById('cgpaValue').textContent = average.toFixed(2);
+    document.getElementById('cgpaLabel').textContent = average >= 8 ? '🌟 Great work!' : average >= 6 ? '👍 Keep going!' : '📘 Keep learning';
+    result.classList.remove('hidden');
+    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  });
+
+  document.querySelectorAll('.nav-link').forEach(link => link.addEventListener('click', () => {
+    document.querySelectorAll('.nav-link').forEach(item => item.classList.remove('active'));
+    link.classList.add('active');
+  }));
+</script>
+</body>
+</html>
