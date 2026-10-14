@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal To-Do List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex justify-center items-center p-4">
+
+    <div class="bg-white w-full max-w-md p-6 rounded-xl shadow-lg">
+
+        <h1 class="text-2xl font-bold text-center text-blue-600 mb-6">
+            Personal To-Do List
+        </h1>
+
+        <div class="flex gap-2 mb-5">
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Enter your task"
+                class="flex-1 border rounded-lg px-3 py-2 outline-blue-500"
+            >
+
+            <button
+                onclick="addTask()"
+                class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
+            >
+                Add
+            </button>
+        </div>
+
+        <ul id="taskList" class="space-y-3"></ul>
+
+        <p id="emptyMessage" class="text-center text-gray-500">
+            No tasks added yet.
+        </p>
+
+    </div>
+
+    <script>
+        const taskInput = document.getElementById("taskInput");
+        const taskList = document.getElementById("taskList");
+        const emptyMessage = document.getElementById("emptyMessage");
+
+        function addTask() {
+            const taskText = taskInput.value.trim();
+
+            if (taskText === "") {
+                alert("Please enter a task!");
+                return;
+            }
+
+            const li = document.createElement("li");
+            li.className =
+                "flex items-center justify-between gap-2 bg-gray-50 p-3 rounded-lg border";
+
+            const taskName = document.createElement("span");
+            taskName.textContent = taskText;
+            taskName.className = "flex-1 break-words";
+
+            taskName.onclick = function () {
+                taskName.classList.toggle("line-through");
+                taskName.classList.toggle("text-gray-400");
+            };
+
+            const completeButton = document.createElement("button");
+            completeButton.textContent = "✓";
+            completeButton.className =
+                "bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600";
+            completeButton.title = "Mark completed";
+
+            completeButton.onclick = function () {
+                taskName.classList.toggle("line-through");
+                taskName.classList.toggle("text-gray-400");
+            };
+
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            deleteButton.className =
+                "bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600";
+
+            deleteButton.onclick = function () {
+                li.remove();
+                updateMessage();
+            };
+
+            li.append(taskName, completeButton, deleteButton);
+            taskList.appendChild(li);
+
+            taskInput.value = "";
+            updateMessage();
+        }
+
+        function updateMessage() {
+            emptyMessage.style.display =
+                taskList.children.length === 0 ? "block" : "none";
+        }
+
+        taskInput.addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                addTask();
+            }
+        });
+    </script>
+
+</body>
+</html>
